@@ -5,25 +5,66 @@ function PreM_main(ImData)
     %{
 
         Jelle Plomp
-        Documentation updated 01-02-2023.
+        
+        Inputs:
+            Input ImData will be an image (before log 
+            compression), the input is defined via 
+            Process().Parameters{'srcbuffer', } where srcbuffer is set to
+            'image'
+        
+        Inputs via evalin()
+            PreM: a struct containing various settings for the iterative
+            procedure (the "Pre-Measurement"), such as the constants for
+            the proportional-integral controller, the initial apodisation,
+            whether or not the partial compensation (see paper) should be
+            used for saving, and many more parameters.
 
-        Input ImData will be an image (before log 
-        compressing it), the input is defined in the
-        Setup via Process().Parameters{'srcbuffer', } where srcbuffer can
-        be 'image' or 'imageP' (both have the same size)
-            (These refer to ImageBuffer and ImagePBuffer)
+            P: a struct with frequently modified acquisition parameters
+            such as the framerate, number of frames, centre frequency, etc.
+
+            Trans, TW, Resource, Control, TPC: standard Verasonics structs 
+            for Transducer, Transmit Waveform, Resource, Control and 
+            Transmit Power Controller.
+
+            ReconVars: struct containing for example the coordinates of the
+            pixels in the reconstructed image, and the coordinates of the
+            transducer elements.
+
+            History, History_stats: see explanation in outputs.
+            
+            event_nr_live: the event number at which the live acquisition
+            starts. Once the iterative procedure is stopped, we jump to
+            this event number.
 
         Outputs:
             History: will contain for each image in the image buffer (of
             the premeasurement) some information, such as the apodisation,
-            voltage, error, etc. 
+            voltage, error, etc.
 
-            TPC and TX will be updated and both assigned to the matlab
-            workspace as well as using set&run/update&run to also apply the
-            changes in the acquisition hardware.
+            History_stats: Here we keep track of some information such as
+            the maximum image intensity at each of the iterations, and the
+            relative changes in the apodisation. 
+            
+            TX will be updated and assigned to the matlab workspace (using 
+            assignin) as well as using update&run to also apply the
+            changes in the acquisition hardware. For this the Control
+            struct is used.
 
             ProcTimes struct is updated with the time spent in this
             function.
+            
+            In the first iteration, after drawing the mask, the filename to
+            the mask is stored in P.
+
+            In the first iteration, the PreM struct is updated with some 
+            information, amongst which:
+                - Mask
+                - set-point for proportional integral controller
+            
+            Note: keeping track of the History, History_stats and ProcTimes
+            is all done for research purposes and not strictly necessary to
+            run the algorithm.
+            
         
     %} 
     
