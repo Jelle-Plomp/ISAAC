@@ -1,0 +1,1 @@
+Obtain the reconstructed data by running [step2_recon_HFR_L12_3v_IQ_batch_main](<../../B_Reconstruction (DAS) of HFR data/step2_recon_HFR_L12_3v_IQ_batch_main.m>) to reconstruct the RcvData in [Data](../Data).

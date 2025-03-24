@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Plomp"
+  given-names: "Jelle"
+  orcid: "https://orcid.org/0009-0008-1671-5162"
+- family-names: "Ghanbarzadeh-Dagheyan"
+  given-names: "Ashkan"
+  orcid: "https://orcid.org/0000-0003-3640-2821"
+- family-names: "Versluis"
+  given-names: "Michel"
+  orcid: "https://orcid.org/0000-0002-2296-1860"
+- family-names: "Lajoinie"
+  given-names: "Guillaume"
+  orcid: "https://orcid.org/0000-0002-8226-7301"
+- family-names: "Groot Jebbink"
+  given-names: "Erik"
+  orcid: "https://orcid.org/0000-0001-7041-8603"
+title: "ISAAC"
+version: 1.0.0
+doi: 10.1016/j.ultrasmedbio.2025.02.012
+date-released: 2025-03-20
+url: "https://github.com/Jelle-Plomp/ISAAC"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Plomp"
+    given-names: "Jelle"
+    orcid: "https://orcid.org/0009-0008-1671-5162"
+  - family-names: "Ghanbarzadeh-Dagheyan"
+    given-names: "Ashkan"
+    orcid: "https://orcid.org/0000-0003-3640-2821"
+  - family-names: "Versluis"
+    given-names: "Michel"
+    orcid: "https://orcid.org/0000-0002-2296-1860"
+  - family-names: "Lajoinie"
+    given-names: "Guillaume"
+    orcid: "https://orcid.org/0000-0002-8226-7301"
+  - family-names: "Groot Jebbink"
+    given-names: "Erik"
+    orcid: "https://orcid.org/0000-0001-7041-8603"
+  doi: 10.1016/j.ultrasmedbio.2025.02.012
+  journal: "Ultrasound in Medicine and Biology"
+  title: "Imaging Behind the Plaque: Improved Blood Flow Quantification Using an Iterative Scheme for Active Attenuation Correction"
+  year: 2025
