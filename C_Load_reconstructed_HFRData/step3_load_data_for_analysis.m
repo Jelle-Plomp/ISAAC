@@ -1,10 +1,7 @@
 clear all; clc
 % Parameters to be set before running script
-gitrepo_topdir = 'C:\Users\PlompJ\OneDrive - University of Twente\Matlab_git_br_pub\'; % replace
-startdir = fullfile([gitrepo_topdir '\data_examples\IQData']); %Where to start data selection
 
 do_image_enhancement=0; % Apply image enhancement?
-
 % Apply Hilbert transform and/or log compression on the reconstructed
 % frames?
 use_hilbert = false;
@@ -12,11 +9,17 @@ use_log_comp = false;
 % Load a mask (if false, user will be asked to draw it)
 loadMask = true;
 
-%% Change directory
-workdir = [gitrepo_topdir 'C_Load_reconstructed_HFRData\'];
+%% Change directory (Repo dir, working dir, data dir)
+scriptpath = matlab.desktop.editor.getActiveFilename;
+repo_dir=extractBefore(scriptpath,'C_Load_reconstructed_HFRData');
+cd(repo_dir)
+
+workdir = [repo_dir 'C_Load_reconstructed_HFRData\'];
 cd(workdir)
 addpath([workdir 'ImageEnhancement_Cheung'])
 addpath([workdir 'Masking'])
+
+startdir = fullfile([repo_dir '\data_examples\IQData']); %Where to start data selection
 
 %% Selecting data
 [fname_IQ,dirname_IQ] = uigetfile({'*_IQData_info.mat'},"Select IQ data info file", startdir );

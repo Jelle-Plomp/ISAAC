@@ -21,11 +21,12 @@
 % 27-01-2023 Jelle Plomp
 clear all; close all; clc
 %% Change current directory to git repo top dir add paths
-current_dir = pwd;
-workfolder = 'C:\Users\PlompJ\OneDrive - University of Twente\Matlab_git_br_pub\';
-cd(workfolder)
+% Go to folder in which this script is located
+scriptpath = matlab.desktop.editor.getActiveFilename;
+repo_dir=extractBefore(scriptpath,'B_Reconstruction');
+cd(repo_dir)
 
-allpaths = genpath(workfolder);
+allpaths = genpath(repo_dir);
 allpaths = strsplit(allpaths, ';');
 
 for i=1:length(allpaths)

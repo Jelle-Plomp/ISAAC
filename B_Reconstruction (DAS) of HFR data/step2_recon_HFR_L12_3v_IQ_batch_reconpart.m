@@ -23,7 +23,7 @@
 
 % The reconstruction algorithm was edited such that everything that remains
 % constant over all frames is only calculated once. The calculations are
-% done in the function file reconstruct_DAS_get_vars.m.
+% done in the function file reconstruct_DAS_get_vars_sparsematrix.m.
 
 
 %% Some parameters (which we may also want to change from the batch script)

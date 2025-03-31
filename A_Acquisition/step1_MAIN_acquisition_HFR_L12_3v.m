@@ -16,8 +16,10 @@ clear all; close all; clc
 %% Parameters
 simulateMode = 1; % Simulation mode?
 % File names and saving
+scriptpath = matlab.desktop.editor.getActiveFilename;
+workfolder=extractBefore(scriptpath,'\A_Acquisition'); % Directory where the repo is cloned/downloaded
+
 filename = 'L12-3v_attcorr.mat'; % Should be called filename, this is recognized by VSX.
-workfolder = 'C:\Users\local.la\Documents\Vantage-4.2.0-2001220500\Jelle\Git_publication'; % Directory where the repo is cloned/downloaded
 
 % =========================================================================
 % General

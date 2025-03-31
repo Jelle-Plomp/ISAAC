@@ -1,8 +1,4 @@
 %% A general approach to data loading, using uigetdir
-% Other option (file
-% step2_recon_HFR_L123v_IQ_batch_dataloading_B_finalresults) is
-% specifically designed to load files based on information from an excel
-% sheet.
 
 % Select folder from which to load the HFR data
 dirname = uigetdir('title','Select folder in which HFR data is stored');
